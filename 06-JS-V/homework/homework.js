@@ -1,6 +1,6 @@
 // No cambies los nombres de las funciones.
 
-function crearUsuario() {
+function crearUsuario(opciones) {
   // Crea una Clase de ES6 o una función constructor llamada "Usuario"
   // Debe aceptar un objeto "opciones" con las propiedades "usuario", "nombre", "email" y "password"
   // En el `contructor`, define el usuario, el nombre, el email y la contraseña
@@ -8,13 +8,73 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
+  class Usuario {
+    constructor(opciones) {
+      this.usuario = opciones.usuario;
+      this.nombre = opciones.nombre;
+      this.email = opciones.email;
+      this.password = opciones.password;
+    }
+
+    saludar() {
+      // do somehting
+      console.log(`Hola, mi nombre es ${this.nombre}`);
+    }
+
+    /* get prop3() {
+      //do something
+      return this._prop3;
+    }
+
+    set prop3(prop3) {
+      // do somehting
+      this._prop3 = prop3;
+    } */
+  }
+  // console.log(Usuario.__proto__);
+  let yop = new Usuario(opciones);
+/*   console.log(yop);
+  console.log(yop.saludar()); */
+  return Usuario;
 }
+/* console.log(crearUsuario({
+  usuario: 'yom69',
+  nombre: 'YoMero',
+  email: 'yom69@chiquititopapis.com',
+  password: 'chiquitaSiMeLoCopias*99'
+})); */
+
+
 
 function agregarMetodoPrototype(Constructor) {
   // Agrega un método al Constructor del `prototype`
   // El método debe llamarse "saludar" y debe devolver la string "Hello World!"
   // Tu código:
+  class Usuario {
+    constructor(opciones) {
+      this.usuario = opciones.usuario;
+      this.nombre = opciones.nombre;
+      this.email = opciones.email;
+      this.password = opciones.password;
+    }
+
+    indicarNobreEEmail() {
+      // do somehting
+      console.log(`Hola, mi nombre es ${this.nombre} y mi email es: ${this.email}`);
+    }
+  }
+  Usuario.prototype.saludar = function() { return 'Hello World!'};
+  let yop2 = new Usuario({
+    usuario: 'yom69',
+    nombre: 'YoMero',
+    email: 'yom69@chiquititopapis.com',
+    password: 'chiquitaSiMeLoCopias*99'
+  });
+  console.log(yop2);
+  console.log(yop2.indicarNobreEEmail());
+  console.log(yop2.saludar());
 }
+agregarMetodoPrototype()
 
 function agregarStringInvertida() {
   // Agrega un método al prototype de String que devuelva la misma cadena de caracteres, pero invertida.
